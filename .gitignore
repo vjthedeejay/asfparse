@@ -1,0 +1,11 @@
+# Executable
+asfparse
+
+# ASF files
+*.asf
+
+# vscode
+.vscode/*
+
+# Mac stuff
+.DS_Store
