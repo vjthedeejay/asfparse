@@ -33,6 +33,6 @@ To build the code on Linux/Mac and create an executable named `asfparse`, run th
 
     gcc main.c util.c parse.c display.c -o asfparse
 
-To run the executable
+To run the executable on an example file
 
-    ./asfparse <inputfile>
+    ./asfparse example.asf

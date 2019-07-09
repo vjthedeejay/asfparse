@@ -1,9 +1,6 @@
 # Executable
 asfparse
 
-# ASF files
-*.asf
-
 # vscode
 .vscode/*
 
