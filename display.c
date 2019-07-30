@@ -173,10 +173,10 @@ display_extended_content_description_object
         case 2:	/* bool */
         case 3:	/* 32-bit word */
         case 4:	/* 64-bit word */
-            printf("%d", convert_char_bytes_to_int(ext_content_descr->descriptor[i].value, 4));
+            printf("%lld", convert_char_bytes_to_int(ext_content_descr->descriptor[i].value, 4));
             break;
         case 5:	/* 16-bit word */
-            printf("%d", convert_char_bytes_to_int(ext_content_descr->descriptor[i].value, 2));
+            printf("%lld", convert_char_bytes_to_int(ext_content_descr->descriptor[i].value, 2));
             break;
         }
         printf("\n\n");

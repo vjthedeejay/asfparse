@@ -226,9 +226,9 @@ parse_command_line
 /*****************************************************************************
 * NAME: convert_char_bytes_to_int
 * DESCRIPTION: Convert an array of bytes to an integer value
-* RETURNS: int
+* RETURNS: long long
 ******************************************************************************/
-int
+long long
 convert_char_bytes_to_int
     (char      *buffer      /* [in] char buffer */
     ,int        num_bytes   /* [in] number of bytes in buffer */

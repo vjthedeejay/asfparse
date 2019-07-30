@@ -1,3 +1,4 @@
+#include <math.h>
 #include "util.h"
 
 /*****************************************************************************
@@ -60,26 +61,30 @@ parse_command_line
 * NAME: convert_char_bytes_to_int
 * DESCRIPTION: Helper function to convert an array of bytes to an integer 
 *              value
-* RETURNS: int
+* RETURNS: long long
 ******************************************************************************/
-int
+long long
 convert_char_bytes_to_int
     (char      *buffer      /* [in] char buffer */
     ,int        num_bytes   /* [in] number of bytes in buffer */
     )
 {
-    if (num_bytes == 2)
+    long long result = 0;
+    int i;
+
+    /* Guard against overflow and undefined behavior */
+    if (num_bytes < 0 || num_bytes > 8)
     {
-        return (unsigned char)buffer[0] + 
-            256 * (unsigned char)buffer[1];
+        return 0;
     }
-    else
+    
+    /* Convert each byte to an integer and add to result */
+    for (i = 0; i < num_bytes; i++)
     {
-        return (unsigned char)buffer[0] + 
-            256 * (unsigned char)buffer[1] +
-            65536 * (unsigned char)buffer[2] + 
-            16777216 * (unsigned char)buffer[3];
+        result += (unsigned char)buffer[i] * (1 << (8 * i));
     }
+
+    return result;
 }
 
 /*****************************************************************************
