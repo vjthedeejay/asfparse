@@ -1,5 +1,6 @@
-# Executable
+# Executable and objects
 asfparse
+*.o
 
 # vscode
 .vscode/*

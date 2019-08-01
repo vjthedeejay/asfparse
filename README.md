@@ -29,10 +29,14 @@ The source files are organized in the following manner:
 
 ## Quick Start
 
-To build the code on Linux/Mac and create an executable named `asfparse`, run the following command
+To build the code on Linux/Mac and create an executable named `asfparse` in the current directory, run the Makefile by typing
 
-    gcc main.c util.c parse.c display.c -o asfparse
+    make
 
-To run the executable on an example file
+To run the executable on an example file, type
 
     ./asfparse example.asf
+
+To remove the executable and objects in the current directory, type
+
+    make clean
